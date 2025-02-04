@@ -27,7 +27,7 @@ if __name__ == '__main__':
     flops_count, params_count = get_model_complexity_info(
             model, (2, 128), as_strings=True,
             input_constructor=partial(bert_input_constructor, tokenizer=bert_tokenizer),
-            print_per_layer_stat=False)
+            print_per_layer_stat=True)
     print('{:<30}  {:<8}'.format('Computational complexity: ', flops_count))
     print('{:<30}  {:<8}'.format('Number of parameters: ', params_count))
 

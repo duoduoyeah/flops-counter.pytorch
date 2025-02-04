@@ -54,7 +54,7 @@ class FlopCounterMode(TorchDispatchMode):
 
     def exit_module(self, name):
         def f(*args):
-            assert(self.parents[-1] == name)
+            assert self.parents[-1] == name
             self.parents.pop()
         return f
 
